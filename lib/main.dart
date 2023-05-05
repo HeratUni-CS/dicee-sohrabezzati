@@ -7,9 +7,9 @@ void main() {
         backgroundColor: Colors.red,
         appBar: AppBar(
           backgroundColor: Colors.red,
-          title: Text('Dice'),
+          title: const Text('Dice'),
         ),
-        body: MyApp(),
+        body: const DicePage(),
       ),
     ),
   );
@@ -23,8 +23,23 @@ class DicePage extends StatefulWidget {
 }
 
 class _DicePageState extends State<DicePage> {
+  int leftDiceNumber = 1;
+  int rightDiceNumber = 1;
+
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Center(
+      child: Row(
+        children: [
+          Expanded(
+              child: TextButton(
+            child: Image.asset(
+              'images/dice$leftDiceNumber.ping',
+            ),
+            onPressed: () {},
+          ))
+        ],
+      ),
+    );
   }
 }
